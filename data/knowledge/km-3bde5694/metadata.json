@@ -1,0 +1,31 @@
+{
+  "module_id": "km-3bde5694",
+  "name": "药剂管理系统-项目概述与技术栈",
+  "version": "1.0.0",
+  "scenario": "industrial",
+  "capability_type": "ProjectOverview",
+  "model_file": "",
+  "config": {},
+  "metadata": {
+    "originalId": "medicine-sys-overview-001",
+    "keywords": [
+      "药剂管理",
+      "单机版",
+      "纯前端",
+      "ES6+",
+      "IndexedDB",
+      "Chart.js",
+      "离线可用"
+    ],
+    "summary": "单机版轻量级药剂管理系统，纯前端架构。技术栈：原生JavaScript(ES6+)、HTML5+CSS3、Chart.js v4.4.0、IndexedDB、Python HTTP Server。架构特点：零依赖后端、离线可用、响应式设计、模块化分层。",
+    "source": "code-analysis",
+    "registeredAt": "2026-02-21T14:44:00.259Z"
+  },
+  "source_agent_id": "system",
+  "prerequisite_modules": [],
+  "accuracy_score": 0.0,
+  "validation_status": "pending",
+  "signature": "7d5c5f0c13779ff1291d1297103b6d87d7c78ab700f425e0fc8606536e0e6816",
+  "created_at": "2026-02-21T22:44:00.456256",
+  "updated_at": "2026-02-21T22:44:00.460250"
+}

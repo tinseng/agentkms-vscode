@@ -1,0 +1,168 @@
+{
+  "name": "agentkms",
+  "displayName": "AgentKMS",
+  "description": "智能Agent知识共享与继承系统 - IDE外挂工具",
+  "version": "1.0.3",
+  "publisher": "agentkms",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/agentkms/agentkms-vscode"
+  },
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Other",
+    "Machine Learning"
+  ],
+  "activationEvents": [
+    "onStartupFinished",
+    "onView:agentkms.knowledgeView",
+    "onView:agentkms.agentView",
+    "onCommand:agentkms.activate",
+    "onCommand:agentkms.searchKnowledge",
+    "onCommand:agentkms.registerKnowledge",
+    "onCommand:agentkms.analyzeAndRegister",
+    "onCommand:agentkms.showQuality",
+    "onCommand:agentkms.exportBundle",
+    "onCommand:agentkms.importBundle",
+    "onCommand:agentkms.showKnowledgeRegistry",
+    "onCommand:agentkms.registerLocalKnowledge"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "agentkms.activate",
+        "title": "AgentKMS: 启动服务"
+      },
+      {
+        "command": "agentkms.searchKnowledge",
+        "title": "AgentKMS: 搜索知识"
+      },
+      {
+        "command": "agentkms.registerKnowledge",
+        "title": "AgentKMS: 注册知识"
+      },
+      {
+        "command": "agentkms.analyzeAndRegister",
+        "title": "AgentKMS: 分析项目并注册知识"
+      },
+      {
+        "command": "agentkms.showQuality",
+        "title": "AgentKMS: 查看质量评分"
+      },
+      {
+        "command": "agentkms.exportBundle",
+        "title": "AgentKMS: 导出知识包"
+      },
+      {
+        "command": "agentkms.importBundle",
+        "title": "AgentKMS: 导入知识包"
+      },
+      {
+        "command": "agentkms.showKnowledgeRegistry",
+        "title": "AgentKMS: 查看知识点注册库"
+      },
+      {
+        "command": "agentkms.registerLocalKnowledge",
+        "title": "AgentKMS: 注册到后端"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "agentkms-explorer",
+          "title": "AgentKMS",
+          "icon": "resources/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "agentkms-explorer": [
+        {
+          "id": "agentkms.knowledgeView",
+          "name": "知识模块"
+        },
+        {
+          "id": "agentkms.agentView",
+          "name": "我的Agent"
+        }
+      ]
+    },
+    "menus": {
+      "view/title": [
+        {
+          "command": "agentkms.searchKnowledge",
+          "when": "view == agentkms.knowledgeView",
+          "group": "navigation"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "agentkms.showQuality",
+          "when": "view == agentkms.knowledgeView && viewItem == knowledge",
+          "group": "inline@1"
+        },
+        {
+          "command": "agentkms.registerLocalKnowledge",
+          "when": "view == agentkms.knowledgeView && viewItem == knowledge",
+          "group": "inline@2"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "AgentKMS",
+      "properties": {
+        "agentkms.apiUrl": {
+          "type": "string",
+          "default": "http://localhost:8080",
+          "description": "AgentKMS API 服务地址"
+        },
+        "agentkms.autoStart": {
+          "type": "boolean",
+          "default": true,
+          "description": "VS Code 启动时自动连接服务"
+        },
+        "agentkms.dataDir": {
+          "type": "string",
+          "default": "./data",
+          "description": "数据存储目录"
+        },
+        "agentkms.defaultScenario": {
+          "type": "string",
+          "default": "industrial",
+          "enum": ["industrial", "customer_service", "data_analysis"],
+          "description": "默认场景类型"
+        },
+        "agentkms.qualityThreshold": {
+          "type": "number",
+          "default": 0.7,
+          "description": "质量评估阈值"
+        },
+        "agentkms.autoStartBackend": {
+          "type": "boolean",
+          "default": true,
+          "description": "自动启动后端服务"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "@types/vscode": "^1.75.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "axios": "^1.6.0"
+  }
+}

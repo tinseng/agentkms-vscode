@@ -1,0 +1,191 @@
+[
+  {
+    "id": "medicine-sys-overview-001",
+    "title": "药剂管理系统-项目概述与技术栈",
+    "category": "ProjectOverview",
+    "keywords": ["药剂管理", "单机版", "纯前端", "ES6+", "IndexedDB", "Chart.js", "离线可用"],
+    "summary": "单机版轻量级药剂管理系统，纯前端架构。技术栈：原生JavaScript(ES6+)、HTML5+CSS3、Chart.js v4.4.0、IndexedDB、Python HTTP Server。架构特点：零依赖后端、离线可用、响应式设计、模块化分层。",
+    "source": "code-analysis",
+    "timestamp": "2026-02-21T00:00:00.000Z"
+  },
+  {
+    "id": "medicine-sys-structure-002",
+    "title": "药剂管理系统-目录结构与模块划分",
+    "category": "Architecture",
+    "keywords": ["目录结构", "分层架构", "数据层", "服务层", "UI层", "模块化"],
+    "summary": "目录结构：js/main.js(主入口)、js/components/(UI组件)、js/db/(数据库层)、js/services/(服务层)、js/utils/(工具函数)。分层架构：数据层(IndexedDB封装)、服务层(业务逻辑)、UI层(事件绑定与渲染)。",
+    "source": "code-analysis",
+    "timestamp": "2026-02-21T00:00:00.000Z"
+  },
+  {
+    "id": "medicine-sys-datamodel-003",
+    "title": "药剂管理系统-数据模型定义",
+    "category": "DataModel",
+    "keywords": ["Account", "Medicine", "MedicineStock", "OutboundRecord", "Project", "UsageRecord", "Log", "数据模型"],
+    "summary": "7个核心数据模型：Account(套账)、Medicine(药剂)、MedicineStock(库存)、OutboundRecord(出库)、Project(项目)、UsageRecord(使用记录)、Log(日志)。数据关系：Account 1:N -> MedicineStock/OutboundRecord/Project/UsageRecord。",
+    "source": "code-analysis",
+    "timestamp": "2026-02-21T00:00:00.000Z"
+  },
+  {
+    "id": "medicine-sys-database-004",
+    "title": "药剂管理系统-数据库设计",
+    "category": "Database",
+    "keywords": ["IndexedDB", "medicine_management_db", "Store", "索引", "DBManager", "事务处理"],
+    "summary": "数据库名：medicine_management_db(v4)。8个Store：accounts、medicines、medicine_stocks、projects、usage_records、project_medicines、logs、outbound_records。DBManager类提供CRUD、事务、备份恢复等方法。",
+    "source": "code-analysis",
+    "timestamp": "2026-02-21T00:00:00.000Z"
+  },
+  {
+    "id": "medicine-sys-business-005",
+    "title": "药剂管理系统-核心业务逻辑",
+    "category": "BusinessLogic",
+    "keywords": ["套账管理", "药剂管理", "出库管理", "预警系统", "报表统计", "日志系统"],
+    "summary": "6大核心功能：套账管理(创建/切换/继承)、药剂管理(CRUD/批量操作/CSV导入导出)、出库管理(事务处理/库存联动)、预警系统(有效期/库存预警)、报表统计(多时间维度)、日志系统(操作记录)。",
+    "source": "code-analysis",
+    "timestamp": "2026-02-21T00:00:00.000Z"
+  },
+  {
+    "id": "medicine-sys-devpractice-006",
+    "title": "药剂管理系统-开发规范与最佳实践",
+    "category": "BestPractice",
+    "keywords": ["编码规范", "事件驱动", "事务处理", "CDN回退", "错误处理", "UI交互"],
+    "summary": "关键实践：事件驱动架构(套账切换通知)、事务处理(出库操作一致性)、CDN回退机制、全局错误捕获、自动备份。UI交互：模态框管理、表单验证、防抖节流、响应式适配。",
+    "source": "code-analysis",
+    "timestamp": "2026-02-21T00:00:00.000Z"
+  },
+  {
+    "id": "agentkms-vscode-overview-001",
+    "title": "AgentKMS-VSCode插件-项目概述",
+    "category": "ProjectOverview",
+    "keywords": ["VSCode扩展", "TypeScript", "AgentKMS", "知识管理", "IDE插件"],
+    "summary": "AgentKMS VS Code插件是智能Agent知识共享与继承系统的IDE外挂工具。技术栈：TypeScript + VS Code Extension API + Axios。功能：知识模块管理、搜索、注册、质量评估、学习决策。版本：1.0.3。",
+    "source": "code-analysis",
+    "timestamp": "2026-02-21T12:00:00.000Z"
+  },
+  {
+    "id": "agentkms-vscode-architecture-002",
+    "title": "AgentKMS-VSCode插件-架构设计",
+    "category": "Architecture",
+    "keywords": ["模块化", "分层架构", "API层", "视图层", "数据层", "工具层"],
+    "summary": "架构分层：入口层(extension.ts)、API层(api/client.ts)、数据层(knowledge/registry.ts)、视图层(providers/)、UI层(ui/)、工具层(utils/)。模块职责清晰，前后端分离设计。",
+    "source": "code-analysis",
+    "timestamp": "2026-02-21T12:00:00.000Z"
+  },
+  {
+    "id": "agentkms-vscode-commands-003",
+    "title": "AgentKMS-VSCode插件-命令体系",
+    "category": "Commands",
+    "keywords": ["命令注册", "activate", "searchKnowledge", "registerKnowledge", "showQuality", "analyzeAndRegister"],
+    "summary": "11个核心命令：启动服务(activate)、搜索知识(searchKnowledge)、注册知识(registerKnowledge)、分析项目(analyzeAndRegister)、查看质量(showQuality)、注册到后端(registerLocalKnowledge)、导出/导入知识包(exportBundle/importBundle)、查看注册库(showKnowledgeRegistry)等。",
+    "source": "code-analysis",
+    "timestamp": "2026-02-21T12:00:00.000Z"
+  },
+  {
+    "id": "agentkms-vscode-api-004",
+    "title": "AgentKMS-VSCode插件-API客户端",
+    "category": "API",
+    "keywords": ["Axios", "RESTful", "HTTP", "ApiClient", "错误处理", "日志记录"],
+    "summary": "ApiClient封装10+个后端接口：健康检查(checkHealth)、知识搜索(searchKnowledge)、知识注册(registerKnowledge)、质量评估(getQuality)、冲突检测(detectConflicts)、学习决策(decideLearning)、执行学习(learnKnowledge)、知识包导入/导出(importBundle/exportBundle)、Agent列表(listAgents)。",
+    "source": "code-analysis",
+    "timestamp": "2026-02-21T12:00:00.000Z"
+  },
+  {
+    "id": "agentkms-vscode-storage-005",
+    "title": "AgentKMS-VSCode插件-本地存储",
+    "category": "Storage",
+    "keywords": ["KnowledgeStore", "KnowledgeEntry", "JSON", "持久化", "CRUD", "搜索"],
+    "summary": "KnowledgeStore管理本地知识点：数据模型(id/title/category/keywords/summary/source/timestamp)、JSON文件持久化、增删查操作、全文搜索、导入/导出功能。存储路径：工作区/data/knowledge-registry.json。",
+    "source": "code-analysis",
+    "timestamp": "2026-02-21T12:00:00.000Z"
+  },
+  {
+    "id": "agentkms-vscode-analyzer-006",
+    "title": "AgentKMS-VSCode插件-项目分析器",
+    "category": "Analyzer",
+    "keywords": ["ProjectAnalyzer", "依赖分析", "能力检测", "CAPABILITY_PATTERNS", "自动注册"],
+    "summary": "ProjectAnalyzer自动分析项目：解析package.json、扫描文件扩展名、正则匹配CAPABILITY_PATTERNS(20+种技术栈)、推断技术能力、向导式交互注册知识。支持检测前端框架、后端框架、数据库、AI/ML等。",
+    "source": "code-analysis",
+    "timestamp": "2026-02-21T12:00:00.000Z"
+  },
+  {
+    "id": "agentkms-vscode-views-007",
+    "title": "AgentKMS-VSCode插件-视图提供者",
+    "category": "Views",
+    "keywords": ["TreeDataProvider", "KnowledgeProvider", "AgentProvider", "KnowledgeItem", "contextValue"],
+    "summary": "视图提供者实现：KnowledgeProvider显示本地知识点(📚)和远程模块(🌐)，AgentProvider显示Agent列表。支持图标区分质量等级(A/A+/B)、右键菜单(contextValue=knowledge)、热更新API客户端。",
+    "source": "code-analysis",
+    "timestamp": "2026-02-21T12:00:00.000Z"
+  },
+  {
+    "id": "agentkms-vscode-webview-008",
+    "title": "AgentKMS-VSCode插件-Webview面板",
+    "category": "Webview",
+    "keywords": ["WebviewPanel", "质量报告", "知识详情", "HTML", "CSS", "可视化"],
+    "summary": "Webview实现：质量报告(五维评分可视化-准确性/完整性/一致性/安全性/可用性)、知识详情(配置信息/元数据展示)。本地知识点显示预估报告，远程模块显示后端评估报告。",
+    "source": "code-analysis",
+    "timestamp": "2026-02-21T12:00:00.000Z"
+  },
+  {
+    "id": "agentkms-vscode-logger-009",
+    "title": "AgentKMS-VSCode插件-日志系统",
+    "category": "Logger",
+    "keywords": ["Logger", "LogLevel", "OutputChannel", "文件日志", "内存缓存", "多级别"],
+    "summary": "Logger统一日志管理：5个级别(DEBUG/INFO/WARN/ERROR)、VS Code输出面板集成、文件持久化(~/.agentkms/logs/)、内存缓存(1000条)、专用类型标记(EXTENSION/API/USER/KNOWLEDGE/BACKEND/CONFIG)。",
+    "source": "code-analysis",
+    "timestamp": "2026-02-21T12:00:00.000Z"
+  },
+  {
+    "id": "agentkms-vscode-backend-010",
+    "title": "AgentKMS-VSCode插件-后端服务管理",
+    "category": "Backend",
+    "keywords": ["自动启动", "Python", "FastAPI", "spawn", "进程管理", "健康检查"],
+    "summary": "startBackendService自动管理后端：检测服务状态、查找start.py、spawn启动Python进程、监听stdout/stderr、等待启动成功(30秒超时)、插件停用时自动终止进程。配置项：autoStartBackend。",
+    "source": "code-analysis",
+    "timestamp": "2026-02-21T12:00:00.000Z"
+  },
+  {
+    "id": "agentkms-vscode-config-011",
+    "title": "AgentKMS-VSCode插件-配置体系",
+    "category": "Configuration",
+    "keywords": ["package.json", "contributes", "configuration", "autoStart", "apiUrl", "dataDir"],
+    "summary": "6个配置项：apiUrl(后端地址)、autoStart(自动连接)、autoStartBackend(自动启动后端)、dataDir(数据目录)、defaultScenario(默认场景)、qualityThreshold(质量阈值)。支持配置热更新(onDidChangeConfiguration)。",
+    "source": "code-analysis",
+    "timestamp": "2026-02-21T12:00:00.000Z"
+  },
+  {
+    "id": "agentkms-vscode-patterns-012",
+    "title": "AgentKMS-VSCode插件-设计模式",
+    "category": "DesignPatterns",
+    "keywords": ["单例模式", "观察者模式", "工厂模式", "适配器模式", "TypeScript"],
+    "summary": "应用的设计模式：单例模式(Logger全局实例)、观察者模式(EventEmitter树视图刷新)、工厂模式(KnowledgeItem创建)、适配器模式(ApiClient接口适配)。代码遵循SOLID原则。",
+    "source": "code-analysis",
+    "timestamp": "2026-02-21T12:00:00.000Z"
+  },
+  {
+    "id": "agentkms-vscode-errorhandling-013",
+    "title": "AgentKMS-VSCode插件-错误处理策略",
+    "category": "ErrorHandling",
+    "keywords": ["try-catch", "错误层级", "友好提示", "日志记录", "优雅降级"],
+    "summary": "四层错误处理：API层返回空数组/默认值、存储层忽略错误继续执行、视图层显示友好提示、命令层try-catch+消息提示。后端404特殊处理(如/agent/list返回空列表)。",
+    "source": "code-analysis",
+    "timestamp": "2026-02-21T12:00:00.000Z"
+  },
+  {
+    "id": "agentkms-vscode-dataflow-014",
+    "title": "AgentKMS-VSCode插件-数据流设计",
+    "category": "DataFlow",
+    "keywords": ["本地+远程", "混合存储", "数据同步", "知识注册", "质量评估"],
+    "summary": "数据流架构：本地知识点(id/title/category)存储于JSON文件，远程模块(module_id/name/version)存储于后端数据库。支持本地知识点注册到后端、搜索时自动登记、质量评估区分本地(模拟)和远程(后端)。",
+    "source": "code-analysis",
+    "timestamp": "2026-02-21T12:00:00.000Z"
+  },
+  {
+    "id": "agentkms-vscode-vscodeapi-015",
+    "title": "AgentKMS-VSCode插件-VS Code API应用",
+    "category": "VSCodeAPI",
+    "keywords": ["ExtensionContext", "TreeDataProvider", "Webview", "StatusBar", "commands", "workspace"],
+    "summary": "核心API使用：ExtensionContext(生命周期)、TreeDataProvider(知识/Agent列表)、WebviewPanel(质量报告/详情)、StatusBarItem(连接状态)、commands(命令注册)、workspace(配置/工作区)、window(输入/选择/对话框)。",
+    "source": "code-analysis",
+    "timestamp": "2026-02-21T12:00:00.000Z"
+  }
+]

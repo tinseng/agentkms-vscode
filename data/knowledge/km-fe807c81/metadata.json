@@ -1,0 +1,30 @@
+{
+  "module_id": "km-fe807c81",
+  "name": "药剂管理系统-目录结构与模块划分",
+  "version": "1.0.0",
+  "scenario": "industrial",
+  "capability_type": "Architecture",
+  "model_file": "",
+  "config": {},
+  "metadata": {
+    "originalId": "medicine-sys-structure-002",
+    "keywords": [
+      "目录结构",
+      "分层架构",
+      "数据层",
+      "服务层",
+      "UI层",
+      "模块化"
+    ],
+    "summary": "目录结构：js/main.js(主入口)、js/components/(UI组件)、js/db/(数据库层)、js/services/(服务层)、js/utils/(工具函数)。分层架构：数据层(IndexedDB封装)、服务层(业务逻辑)、UI层(事件绑定与渲染)。",
+    "source": "code-analysis",
+    "registeredAt": "2026-02-21T14:44:34.374Z"
+  },
+  "source_agent_id": "system",
+  "prerequisite_modules": [],
+  "accuracy_score": 0.0,
+  "validation_status": "pending",
+  "signature": "f3b9810abb8f3d2c316b39b68352d378db80b5a00502feced8ea39f47b5a500c",
+  "created_at": "2026-02-21T22:44:34.382227",
+  "updated_at": "2026-02-21T22:44:34.382237"
+}
